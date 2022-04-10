@@ -1,7 +1,12 @@
 <template></template>
 
 <script>
-export default {};
+export default {
+  name:'app',
+  components:{
+    
+  }
+};
 </script>
 
 <style>
