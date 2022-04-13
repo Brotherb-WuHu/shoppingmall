@@ -5,6 +5,7 @@ module.exports = defineConfig({
     resolve: {
       alias: {
         assets: "@/assets",
+        img: "~assets/img",
         components: "@/components",
         content: "@/components/content",
         common: "@/components/common",
