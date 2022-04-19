@@ -11,18 +11,30 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
     component: HomeView,
+    meta: {
+      keepAlive: true,
+    },
   },
   {
     path: "/profile",
     component: ProfileView,
+    meta: {
+      keepAlive: true,
+    },
   },
   {
     path: "/cart",
     component: CartView,
+    meta: {
+      keepAlive: true,
+    },
   },
   {
     path: "/category",
     component: CategoryView,
+    meta: {
+      keepAlive: true,
+    },
   },
 ];
 

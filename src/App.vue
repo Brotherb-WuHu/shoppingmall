@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <router-view #="{ Component }">
+      <keep-alive>
+        <component :is="Component"></component>
+      </keep-alive>
+    </router-view>
     <main-tab-bar></main-tab-bar>
   </div>
 </template>
