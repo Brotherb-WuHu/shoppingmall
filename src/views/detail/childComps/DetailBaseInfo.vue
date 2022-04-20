@@ -1,5 +1,5 @@
 <template>
-  <!-- 建议加这条：对象不为空才展示信息 -->
+  <!-- 建议加这条 v-if:对象不为空才展示信息 -->
   <div v-if="Object.keys(goods).length !== 0" class="base-info">
     <!-- 标题 -->
     <div class="info-title">{{ goods.title }}</div>
@@ -53,6 +53,7 @@ export default {
 }
 
 .info-title {
+  font-size: 18px;
   color: #222;
 }
 
@@ -61,7 +62,7 @@ export default {
 }
 
 .info-price .n-price {
-  font-size: 24px;
+  font-size: 34px;
   color: var(--color-high-text);
 }
 

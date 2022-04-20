@@ -14,7 +14,7 @@
       @tabClick="tabClick"
     ></tab-control>
     <scroll
-      class="content"
+      class="home-content"
       ref="scroll"
       :probe-type="3"
       :pull-up-load="true"
@@ -202,7 +202,7 @@ export default {
   color: white;
 }
 
-.content {
+.home-content {
   overflow: hidden;
 
   position: absolute;
