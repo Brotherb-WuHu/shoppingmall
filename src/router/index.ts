@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-const HomeView = () => import("../views/home/HomeView.vue");
-const ProfileView = () => import("../views/profile/ProfileView.vue");
-const CategoryView = () => import("../views/category/CategoryView.vue");
-const CartView = () => import("../views/cart/CartView.vue");
+const HomeView = () => import("@/views/home/HomeView.vue");
+const ProfileView = () => import("@/views/profile/ProfileView.vue");
+const CategoryView = () => import("@/views/category/CategoryView.vue");
+const CartView = () => import("@/views/cart/CartView.vue");
+const Detail = () => import("@/views/detail/Detail.vue");
 const routes: Array<RouteRecordRaw> = [
   {
     path: "",
@@ -35,6 +36,10 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       keepAlive: true,
     },
+  },
+  {
+    path: "/detail/:iid",
+    component: Detail,
   },
 ];
 

@@ -1,8 +1,8 @@
   <!-- goods.list 里面是 一堆小对象，每个小组件与每个小对象对应起来 -->
 
 <template>
-  <div class="goods-item">
-    <a :href="goodsItem.link">
+  <div class="goods-item" @click="goodsItemClick">
+    <a>
       <img :src="goodsItem.show.img" />
     </a>
     <div class="goods-info">
@@ -22,6 +22,12 @@ export default {
       default() {
         return {};
       },
+    },
+  },
+  // 跳转详情页
+  methods: {
+    goodsItemClick() {
+      this.$emit("goodsItemClick");
     },
   },
 };

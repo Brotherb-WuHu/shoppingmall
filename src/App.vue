@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view #="{ Component }">
-      <keep-alive>
+      <keep-alive exclude="Detail">
         <component :is="Component"></component>
       </keep-alive>
     </router-view>
@@ -22,6 +22,6 @@ export default {
 </script>
     
 
-<style>
+<style scoped>
 @import "assets/css/base.css";
 </style>
