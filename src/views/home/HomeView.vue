@@ -99,9 +99,6 @@ export default {
     this.getHomeGoods("sell");
   },
   mounted() {},
-  destroyed() {
-    console.log("homedestroy");
-  },
   methods: {
     // 网络请求方法-总
     getHomeMultidata() {

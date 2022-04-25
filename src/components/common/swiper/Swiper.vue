@@ -25,7 +25,6 @@
 <script>
 export default {
   name: "Swiper",
-  // 传入的属性，可以定制一些东西
   props: {
     interval: {
       type: Number,
@@ -33,9 +32,8 @@ export default {
     },
     animDuration: {
       type: Number,
-      default: 500,
+      default: 600,
     },
-    // 当页面滚到 四分之一处 松手自动滑到下一张
     moveRatio: {
       type: Number,
       default: 0.25,
@@ -55,13 +53,12 @@ export default {
     };
   },
   mounted: function () {
-    // 1.操作DOM, 在前后添加Slide
-    setTimeout(() => {
+    if (document.querySelector(".swiper").childElementCount == 0) {
+      this.observeSwiper();
+    } else {
       this.handleDom();
-
-      // 2.开启定时器
       this.startTimer();
-    }, 100);
+    }
   },
   methods: {
     /**
@@ -225,6 +222,17 @@ export default {
 
       // 3.添加定时器
       this.startTimer();
+    },
+    observeSwiper() {
+      const targetNode = document.querySelector(".swiper");
+      const config = { childList: true };
+      const callback = (mutationsList, observer) => {
+        this.handleDom();
+        this.startTimer();
+        observer.disconnect();
+      };
+      const observer = new MutationObserver(callback);
+      observer.observe(targetNode, config);
     },
   },
 };

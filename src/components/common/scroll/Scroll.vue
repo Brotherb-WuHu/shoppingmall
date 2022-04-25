@@ -28,7 +28,7 @@ export default {
     },
     pullUpLoad: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     observeImage: {
       type: Boolean,
@@ -44,7 +44,7 @@ export default {
       click: true,
       observeDOM: true,
     });
-    // 监听当前滚动位置
+    // 监听当前滚动位置,并发送scroll事件
     this.scroll.on("scroll", (position) => {
       this.$emit("scroll", position);
     });

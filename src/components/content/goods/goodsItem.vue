@@ -3,7 +3,7 @@
 <template>
   <div class="goods-item" @click="goodsItemClick">
     <a>
-      <img :src="goodsItem.show.img" />
+      <img v-lazy="showImage" :key="showImage" />
     </a>
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
@@ -28,6 +28,13 @@ export default {
   methods: {
     goodsItemClick() {
       this.$emit("goodsItemClick");
+    },
+  },
+  computed: {
+    // 首页展示的 good img 路径与详情页的 推荐类别的 img 路径不一样，需要个判断
+    showImage() {
+      // 当前面为空时，取后面的数据
+      return this.goodsItem.image || this.goodsItem.show.img;
     },
   },
 };

@@ -1,11 +1,19 @@
 import { request } from "./request";
 
+// 请求详情页的数据
 export function getDetail(iid) {
   return request({
     url: "/detail",
     params: {
       iid,
     },
+  });
+}
+
+// 请求推荐类别的数据(没错，这接口不在详情页里面)
+export function getRecommonds() {
+  return request({
+    url: "/recommend",
   });
 }
 // 有些数据分布非常分散，最好整合成一个对象再发出去

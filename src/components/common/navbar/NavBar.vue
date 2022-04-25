@@ -6,7 +6,9 @@
       <slot name="left"></slot>
     </div>
     <div class="center">
-      <slot name="center"></slot>
+      <slot name="center">
+        <h2>hello</h2>
+      </slot>
     </div>
     <div class="right">
       <slot name="right"></slot>
@@ -23,6 +25,7 @@ export default {
 <style>
 .nav-bar {
   display: flex;
+  position: relative;
   flex-direction: row;
   height: 44px;
   line-height: 44px;
