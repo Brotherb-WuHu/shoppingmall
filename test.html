@@ -8,39 +8,10 @@
   <title>Document</title>
 </head>
 
+<script src="./node_modules/vue/dist/vue.cjs.js"></script>
+
 <body>
-  <input type="text">
 
-  <button>hello</button>
 </body>
-<script type="module">
-  import { debounce } from "./src/common/utils.js"
-  let input = document.querySelector('input')
-  let btn = document.querySelector('button')
-  let array = [];
-
-  // 这个 fn 接受的是要防抖的函数,一般要返回一个函数，想执行原来的 fn 在返回的函数里面调用即可 
-  // 如果直接执行就只是把多次请求延时执行了而已，防抖思路:每次设置定时器前把原来定时器重置
-  // function debounce(fn, delay = 1000) {
-  //   let timer = null
-  //   return function () {
-  //     if (timer) {
-  //       clearTimeout(timer)
-  //     }
-  //     timer = setTimeout(() => {
-  //       fn();
-  //     }, delay);
-
-  //   }
-  // }
-
-  btn.addEventListener('click', debounce(() => {
-    array.push(1);
-    array.push(2);
-    console.log(array);
-  }, 500));
-
-
-</script>
 
 </html>

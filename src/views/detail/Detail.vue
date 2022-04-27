@@ -159,7 +159,6 @@ export default {
       this.themeTops.push(0);
       this.themeTops.push(this.$refs.paramInfo.$el.offsetTop);
       this.themeTops.push(this.$refs.commentInfo.$el.offsetTop);
-      this.themeTops.push(this.$refs.paramInfo.$el.offsetTop);
       this.themeTops.push(this.$refs.recommonds.$el.offsetTop);
       // console.log(this.themeTops);
     },

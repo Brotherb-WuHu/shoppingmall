@@ -9,8 +9,9 @@
       <span class="check-content-text">全选</span>
     </div>
     <div class="totalPrice">合计:{{ totalPrice }}</div>
-    <div class="calculateBtn">去计算({{ checkedLength }})</div>
-    <div>{{ isSelectAll }}</div>
+    <div class="calculateBtn" @click="calculateBtn">
+      去计算({{ checkedLength }})
+    </div>
   </div>
 </template>
 
@@ -39,7 +40,7 @@ export default {
           })
           // 简化：让每一项=每一项价格*数量
           .reduce((preValue, item) => {
-            return item.price * item.count;
+            return preValue + item.price * item.count;
           }, 0)
           // 保留两位小数
           .toFixed(2)
@@ -47,7 +48,7 @@ export default {
     },
     checkedLength() {
       return this.cartList.filter((item) => {
-        item.checked;
+        return item.checked;
       }).length;
     },
     isSelectAll() {
@@ -71,6 +72,9 @@ export default {
       } else {
         this.cartList.forEach((item) => (item.checked = true));
       }
+    },
+    calculateBtn() {
+      this.$toast.show("敬请见证", 2000);
     },
   },
 };

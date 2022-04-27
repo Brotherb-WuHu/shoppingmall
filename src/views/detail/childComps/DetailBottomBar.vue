@@ -2,21 +2,21 @@
   <div class="bottom-bar">
     <div class="bar-item bar-left">
       <div>
-        <i class="icon service"></i>
+        <i class="icon service" @click="itmClick"></i>
         <span class="text">客服</span>
       </div>
       <div>
-        <i class="icon shop"></i>
+        <i class="icon shop" @click="itmClick"></i>
         <span class="text">店铺</span>
       </div>
       <div>
-        <i class="icon select"></i>
+        <i class="icon select" @click="itmClick"></i>
         <span class="text">收藏</span>
       </div>
     </div>
     <div class="bar-item bar-right">
       <div class="cart" @click="addToCart">加入购物车</div>
-      <div class="buy">购买</div>
+      <div class="buy" @click="itmClick">购买</div>
     </div>
   </div>
 </template>
@@ -27,6 +27,9 @@ export default {
   methods: {
     addToCart() {
       this.$emit("addToCart");
+    },
+    itmClick() {
+      this.$toast.show("敬请见证", 2000);
     },
   },
 };

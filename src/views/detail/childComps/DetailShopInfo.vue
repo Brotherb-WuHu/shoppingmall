@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="shop-bottom">
-      <div class="enter-shop">进店逛逛</div>
+      <div class="enter-shop" @click="itmClick">进店逛逛</div>
     </div>
   </div>
 </template>
@@ -55,6 +55,11 @@ export default {
       const value = this.shop.sells;
       if (value < 10000) return value;
       return (value / 10000).toFixed(1) + "万";
+    },
+  },
+  methods: {
+    itmClick() {
+      this.$toast.show("敬请见证", 2000);
     },
   },
 };
